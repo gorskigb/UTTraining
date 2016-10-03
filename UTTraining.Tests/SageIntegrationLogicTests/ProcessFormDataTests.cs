@@ -38,13 +38,13 @@ namespace UTTraining.Tests.SageIntegrationLogicTests
         [TestCase]
         public void ProcessFormData_NotNullArgument_ValidateFormDataCalled()
         {
-            var invoiceDataValidationStub = CreateInvoiceDataValidatorFake();
-            var logic = GetSageIntegrationLogicInstance(invoiceDataValidationStub);
+            var invoiceDataValidationMock = CreateInvoiceDataValidatorFake();
+            var logic = GetSageIntegrationLogicInstance(invoiceDataValidationMock);
             Invoice argument = A.Dummy<Invoice>();
 
             logic.ProcessFormData(argument);
 
-            A.CallTo(() => invoiceDataValidationStub
+            A.CallTo(() => invoiceDataValidationMock
                 .ValidateFormData(argument))
                 .MustHaveHappened();
         }
