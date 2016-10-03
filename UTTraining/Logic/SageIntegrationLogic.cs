@@ -36,7 +36,7 @@ namespace UTTraining.Logic
         {
             processedData.VatAmount = data.VatAmount;
             processedData.Gross = data.Gross;
-            processedData.Net = data.Gross - data.Gross;
+            processedData.Net = data.Gross - data.VatAmount;
         }
     }
 

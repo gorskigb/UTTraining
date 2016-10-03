@@ -126,7 +126,7 @@ namespace UTTraining.Tests.SageIntegrationLogicTests
 
             var result = logic.ProcessFormData(argument);
 
-            Assert.Equals(result.Result.Gross, gross);
+            Assert.AreEqual(result.Result.Gross, gross);
         }
 
         [TestCase]
@@ -139,7 +139,7 @@ namespace UTTraining.Tests.SageIntegrationLogicTests
 
             var result = logic.ProcessFormData(argument);
 
-            Assert.Equals(result.Result.Gross, result.Result.Net);
+            Assert.AreEqual(result.Result.Gross, result.Result.Net);
         }
 
         [TestCase]
@@ -153,7 +153,7 @@ namespace UTTraining.Tests.SageIntegrationLogicTests
 
             var result = logic.ProcessFormData(argument);
 
-            Assert.Equals(result.Result.Net, netValue);
+            Assert.AreEqual(result.Result.Net, netValue);
         }
 
         private IInvoiceDataValidator CreateInvoiceDataValidatorFake()
